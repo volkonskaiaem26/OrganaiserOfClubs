@@ -1,12 +1,9 @@
 package com.example.organaiser.Entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
-@NoArgsConstructor
 public class Attendance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

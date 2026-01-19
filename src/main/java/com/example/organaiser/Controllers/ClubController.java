@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("api/clubs")
+@RequestMapping("/api/clubs")
 public class ClubController {
 
     private final ClubRepository clubs;

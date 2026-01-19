@@ -1,10 +1,8 @@
 package com.example.organaiser.Entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 @Entity
-@Data
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
