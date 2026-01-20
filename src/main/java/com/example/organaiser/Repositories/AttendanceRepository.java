@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface AttendanceRepository extends JpaRepository<Attendance, Integer> {
 
-    Attendance getAttendanceEventOfMember (int eventID, int memberID);
+    Attendance findByEventIdAndMemberId(int eventID, int memberID);
 
-    List<Attendance> getEventAttendance(int eventID);
+    List<Attendance> findByEventId(int eventID);
 }

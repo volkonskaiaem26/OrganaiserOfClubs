@@ -23,7 +23,7 @@ public class EventController {
 
     @GetMapping("/{eventID}/attendance")
     public ResponseEntity<List<Attendance>> getEventAttendance(@PathVariable int eventID){
-        List <Attendance> eventAttendance = attendances.getEventAttendance(eventID);
+        List <Attendance> eventAttendance = attendances.findByEventId(eventID);
         return ResponseEntity.ok(eventAttendance);
     }
 
@@ -53,7 +53,7 @@ public class EventController {
                                               @RequestParam String status){
         Optional<Event> IdEvent = events.findById(eventID);
         if(IdEvent.isPresent()){
-            Attendance attendance = attendances.getAttendanceEventOfMember(eventID, memberID);
+            Attendance attendance = attendances.findByEventIdAndMemberId(eventID, memberID);
             if(attendance!=null){
                 attendance.setStatus(status);
                 attendances.save(attendance);
