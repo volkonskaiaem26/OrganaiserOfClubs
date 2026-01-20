@@ -41,6 +41,7 @@ public class EventController {
         Optional<Event> IdEvent = events.findById(eventID);
         if(IdEvent.isPresent()){
             Attendance attendance = new Attendance(memberID, eventID, "приглашен");
+            attendances.save(attendance);
             return ResponseEntity.accepted().build();
         } else {
             return ResponseEntity.notFound().build();
