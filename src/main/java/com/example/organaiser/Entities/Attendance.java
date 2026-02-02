@@ -1,7 +1,6 @@
 package com.example.organaiser.Entities;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
 
 @Entity
 public class Attendance {
@@ -10,15 +9,15 @@ public class Attendance {
     @Column
     private int ID;
     @Column
-    private int memberID;
+    private int memberId;
     @Column
-    private int eventID;
+    private int eventId;
     @Column
     private String status;
 
     public Attendance(int memberID, int eventID, String status){
-        this.memberID = memberID;
-        this.eventID = eventID;
+        this.memberId = memberID;
+        this.eventId = eventID;
         this.status = status;
     }
 
